@@ -490,7 +490,7 @@ class ConsoleApplication:
             return
         if self._device_id is not None:
             try:
-                self._device = frida.get_device(self._device_id)
+                self._device = frida.get_device(self._device_id, 1000)
             except:
                 self._update_status(f"Device '{self._device_id}' not found")
                 self._exit(1)
